@@ -184,6 +184,11 @@
             for(var cnt =0;cnt< circles.length; cnt++) {
                 circles[cnt].fillColor.hue +=1;
                 circles[cnt].scale(.9);
+                if(circles[cnt].area < 1) {
+                    circles[cnt].remove();
+                    circles.splice(cnt,1);
+                    cnt--;
+                }
             }
         }
     </script>
